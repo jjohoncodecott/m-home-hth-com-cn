@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>德州扑克app · 日常参考页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f5f0;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2f2e2b;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #fefcf9;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            border-bottom: 1px solid #e2dcd0;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1rem;
+            color: #3b3a35;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 2rem 0 0.8rem 0;
+            color: #4d4a44;
+            border-left: 4px solid #bfb6a9;
+            padding-left: 0.8rem;
+        }
+
+        p {
+            margin: 0.9rem 0;
+        }
+
+        a {
+            color: #7a6b58;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: background 0.2s;
+        }
+
+        a:hover {
+            background: #ece6dc;
+            text-decoration: none;
+        }
+
+        .hero-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1.2rem 0 1.8rem 0;
+            align-items: center;
+        }
+
+        .hero-visual {
+            flex: 1 1 180px;
+            background: #ede9e1;
+            aspect-ratio: 4 / 3;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7d7568;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            background-image: radial-gradient(circle at 30% 40%, #e0dad0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .hero-text {
+            flex: 2 1 260px;
+        }
+
+        .hero-text p {
+            margin: 0.3rem 0;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-card {
+            background: #f6f3ed;
+            border-radius: 10px;
+            padding: 1.2rem 1rem 1rem 1rem;
+            border: 1px solid #e5dfd5;
+            transition: box-shadow 0.15s;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        .info-card h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4d463b;
+            margin-bottom: 0.4rem;
+            border-bottom: 1px dotted #d4ccc0;
+            padding-bottom: 0.2rem;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+            color: #4e4a44;
+        }
+
+        .inset-quote {
+            background: #f3efe8;
+            border-left: 4px solid #c2b7a7;
+            padding: 1rem 1.2rem;
+            margin: 1.6rem 0;
+            font-style: normal;
+            border-radius: 0 8px 8px 0;
+            color: #3c3a34;
+        }
+
+        .inset-quote p {
+            margin: 0.2rem 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px dashed #ddd8ce;
+            padding: 0.8rem 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.15rem;
+            color: #4b453c;
+        }
+
+        .faq-item p {
+            margin: 0.1rem 0 0 0;
+            font-size: 0.92rem;
+        }
+
+        .footnote {
+            margin-top: 2.2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e6dfd5;
+            font-size: 0.88rem;
+            color: #6a645b;
+        }
+
+        @media (max-width: 540px) {
+            .page {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-block {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .hero-visual {
+                width: 100%;
+                aspect-ratio: 5 / 3;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>德州扑克app · 日常对照与延伸</h1>
+
+    <!-- 主视觉 + 简述 -->
+    <div class="hero-block">
+        <div class="hero-visual">
+            <span>♢ 手牌参考</span>
+        </div>
+        <div class="hero-text">
+            <p>偶尔打开一个可靠的<a href="https://home-dezhouapp.com">德州扑克app</a>，不是为了立即上桌，而是为了查一下起手牌胜率，或者回顾一手牌的逻辑。</p>
+            <p>久而久之，它更像一个口袋里的参考本——不用多复杂，信息对、翻得快就足够。</p>
+        </div>
+    </div>
+
+    <!-- 资讯卡片：用途场景 -->
+    <h2>用得上的几个场景</h2>
+    <div class="card-grid">
+        <div class="info-card">
+            <h3>⚡ 快速对照</h3>
+            <p>翻前位置、底池赔率、常见翻牌结构——需要时扫一眼，不必死记。</p>
+        </div>
+        <div class="info-card">
+            <h3>📋 牌局笔记</h3>
+            <p>打完一手牌，把思考简要记下。隔天回看，很多感觉会清晰不少。</p>
+        </div>
+        <div class="info-card">
+            <h3>🔍 术语延伸</h3>
+            <p>翻到不熟悉的叫法或概念，顺手检索，比翻书更快。</p>
+        </div>
+        <div class="info-card">
+            <h3>📆 回顾节奏</h3>
+            <p>每周翻几篇牌例或讨论，保持对读牌和范围的敏感度。</p>
+        </div>
+    </div>
+
+    <!-- 适合人群 简短描述 -->
+    <h2>适合这样用的玩家</h2>
+    <p>不管是刚接触规则的新手，还是打过几千手想整理思路的业余爱好者，把<a href="https://home-dezhouapp.com">德州扑克app</a>当作一个安静的参考工具，比当作“速成教练”更自然。它不会替你决策，但能帮你理清自己决策的逻辑。</p>
+
+    <!-- 引用 / 提示块 -->
+    <div class="inset-quote">
+        <p><strong>一个习惯</strong> · 遇到没把握的底牌或翻牌，先停一下，翻翻胜率表或类似牌谱，再回头看自己的行动——很多偏差就是这么慢慢纠正的。</p>
+        <p style="margin-top:0.5rem;">—— 来自一位保持手写笔记的业余玩家</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2>常翻的几个问题</h2>
+    <div class="faq-item">
+        <strong>翻前范围表要不要背？</strong>
+        <p>刚开始可以打印一份常用位置范围贴在旁边，用 app 对照几次就自然记住了。关键不是背，是理解为什么某些牌在某个位置更值得打。</p>
+    </div>
+    <div class="faq-item">
+        <strong>什么是持续下注频率？</strong>
+        <p>简单说就是翻牌后你作为上一轮加注者继续下注的比例。一个参考区间在 60–75% 左右，但要根据牌面结构和对手调整。</p>
+    </div>
+    <div class="faq-item">
+        <strong>怎么判断自己在哪个级别？</strong>
+        <p>不用急于升盲。如果某一级别你能稳定做出多数正确的基础决策（位置、下注尺度、弃牌率估算），再考虑往上试。</p>
+    </div>
+
+    <!-- 自然段落：延伸阅读 -->
+    <p style="margin-top:1.5rem;">偶尔也翻翻不同玩家整理的牌例笔记，比对一下思路差异。同一手牌，有人侧重范围阅读，有人更看重阻断牌——没有标准答案，但多一个视角总是好的。</p>
+
+    <!-- 链接句子自然出现 -->
+    <p>在<a href="https://home-dezhouapp.com">德州扑克app</a>里，你也能找到类似的讨论区或牌局回放，用来验证自己当时的判断是否还有优化的空间。</p>
+
+    <div class="footnote">
+        <p>页面内容仅供日常参考，不构成任何策略承诺。所有信息请结合自身情况斟酌使用。</p>
+    </div>
+</div>
+</body>
+</html>
