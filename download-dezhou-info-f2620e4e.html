@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>德州扑克下载 · 简明指南与访问提醒</title>
+  <style>
+    /* 深色头图 + 浅色正文区域 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8f9fb;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    a {
+      color: #a16207;
+      text-decoration: underline 1px dashed;
+      text-underline-offset: 4px;
+      transition: color 0.2s, background 0.2s;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+    a:hover {
+      color: #7a4f05;
+      background: #fef3c7;
+      text-decoration: underline solid 1px;
+    }
+
+    /* 头图区域（深色） */
+    .hero {
+      background: linear-gradient(145deg, #0f172a 0%, #1e293b 70%, #2d1b00 100%);
+      color: #f1f5f9;
+      padding: 3.2rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(161, 98, 7, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+      color: #fde68a;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+      font-weight: 300;
+    }
+    .hero .badge {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background: rgba(253, 230, 138, 0.12);
+      border: 1px solid #a16207;
+      color: #fde68a;
+      font-size: 0.8rem;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+    }
+
+    /* 导航条（置于头图下方，浅色） */
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #e9edf2;
+      padding: 0.9rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.8rem 2.2rem;
+      font-size: 0.95rem;
+    }
+    .top-nav a {
+      color: #334155;
+      text-decoration: none;
+      font-weight: 450;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 3px;
+      background: transparent;
+    }
+    .top-nav a:hover {
+      color: #a16207;
+      border-bottom-color: #a16207;
+      background: transparent;
+    }
+
+    /* 正文容器 */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 3.5rem;
+    }
+
+    /* 介绍 / 提醒卡片区 */
+    .intro-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.2rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.04);
+      border: 1px solid #edf2f7;
+    }
+    .intro-card h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .intro-card h2::before {
+      content: '📘';
+      font-size: 1.6rem;
+      margin-right: 0.2rem;
+    }
+    .intro-card p {
+      margin-bottom: 1rem;
+    }
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+    .highlight-link {
+      background: #fffbeb;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+
+    /* 三个场景模块（卡片网格） */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin: 2.2rem 0 2rem;
+    }
+    .scene-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem 1.8rem 2rem;
+      border: 1px solid #e9edf2;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .scene-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    }
+    .scene-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .scene-card h3 {
+      font-size: 1.2rem;
+      font-weight: 550;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    /* 常见说明 / 摘要 FAQ */
+    .faq-summary {
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      margin: 2.2rem 0;
+      border-left: 4px solid #a16207;
+    }
+    .faq-summary h3 {
+      font-size: 1.2rem;
+      font-weight: 550;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    .faq-summary dl {
+      display: grid;
+      gap: 0.8rem;
+    }
+    .faq-summary dt {
+      font-weight: 550;
+      color: #1e293b;
+      margin-top: 0.2rem;
+    }
+    .faq-summary dd {
+      margin-left: 0;
+      color: #475569;
+      font-size: 0.95rem;
+      padding-left: 0.8rem;
+      border-left: 2px solid #d6dae0;
+    }
+
+    /* 提醒条 */
+    .notice-strip {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 40px;
+      padding: 0.8rem 1.8rem;
+      margin: 2rem 0 1.8rem;
+      display: inline-block;
+      font-size: 0.95rem;
+      color: #7a4f05;
+    }
+
+    /* 底部 */
+    .footer-note {
+      text-align: center;
+      padding: 2.5rem 2rem 2rem;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 1.5rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 800px) {
+      .hero h1 { font-size: 2rem; }
+      .scene-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 550px) {
+      .hero { padding: 2.2rem 1.2rem; }
+      .hero h1 { font-size: 1.7rem; }
+      .container { padding: 1.8rem 1.2rem; }
+      .intro-card { padding: 1.5rem; }
+      .scene-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .faq-summary { padding: 1.5rem; }
+      .top-nav { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>德州扑克 &middot; 简明指南</h1>
+    <p>从规则理解到客户端准备，一份温和的入门参考</p>
+    <span class="badge">访问提醒 · 安全优先</span>
+  </header>
+
+  <!-- 顶部导航（轻量） -->
+  <nav class="top-nav">
+    <a href="#intro">快速了解</a>
+    <a href="#scenes">常见场景</a>
+    <a href="#faq">常见问题</a>
+    <a href="#notice">访问提醒</a>
+  </nav>
+
+  <!-- 正文区域 -->
+  <div class="container">
+
+    <!-- 核心介绍 + 引导 -->
+    <section id="intro" class="intro-card">
+      <h2>一份温和的起点</h2>
+      <p>对许多牌手来说，寻找合适的客户端是开启对局的第一步。如果你正在寻找一个稳定、可用的版本，可以直接参考 <span class="highlight-link"><a href="https://download-dezhou.com">德州扑克下载</a></span> 提供的信息。这里不夸大功能，也不做诱导承诺，只从实用角度梳理你需要知道的事。</p>
+      <p>无论你是初次接触还是想更换环境，提前了解版本来源、运行环境和常见的安装提醒，都会让整个过程更流畅。下面的几个场景模块覆盖了多数人的实际需求。</p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <div class="scene-grid" id="scenes">
+      <div class="scene-card">
+        <span class="icon">🖥️</span>
+        <h3>桌面端使用</h3>
+        <p>在 Windows 或 macOS 上准备客户端时，优先确认系统版本与安装包格式。部分杀毒软件可能会误报，建议从可信渠道获取，比如 <a href="https://download-dezhou.com">德州扑克下载</a> 页面给出的说明。</p>
+      </div>
+      <div class="scene-card">
+        <span class="icon">📱</span>
+        <h3>移动端适配</h3>
+        <p>安卓与 iOS 的安装流程略有差异。安卓用户需留意安装包来源与权限设置；iOS 用户可借助 TestFlight 或企业签名方式。提前阅读相关提醒能避免很多弯路。</p>
+      </div>
+      <div class="scene-card">
+        <span class="icon">🌐</span>
+        <h3>网络与区域</h3>
+        <p>部分地区访问服务器可能不稳定，合理的网络环境会直接影响对局体验。建议了解常用的网络优化方式，并保持客户端版本为最新。</p>
+      </div>
+    </div>
+
+    <!-- 常见说明 FAQ 摘要 -->
+    <div class="faq-summary" id="faq">
+      <h3>❓ 常见说明与提醒</h3>
+      <dl>
+        <dt>下载后无法安装怎么办？</dt>
+        <dd>先检查系统版本是否满足最低要求，并暂时关闭安全软件或添加信任区。如果仍失败，可以重新获取安装包，有时文件损坏也会导致安装中断。</dd>
+        <dt>是否需要注册账户？</dt>
+        <dd>大部分客户端需要注册游戏账号，建议使用常用邮箱，并开启二次验证。不要轻信任何非官方的代充或账号买卖信息。</dd>
+        <dt>版本更新频率如何？</dt>
+        <dd>正规客户端会定期推送小版本更新，修复漏洞和优化性能。保持更新是一种良好的安全习惯。你可以在 <a href="https://download-dezhou.com">德州扑克下载</a> 页面留意版本动态。</dd>
+      </dl>
+    </div>
+
+    <!-- 访问提醒  -->
+    <div id="notice" class="notice-strip">
+      ⚡ 访问提醒：请通过正规渠道获取客户端，警惕钓鱼链接与恶意修改版本。
+    </div>
+
+    <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #475569;">
+      以上内容基于常见用户反馈整理，不构成任何保证。实际使用时请自行判断环境安全，并合理分配娱乐时间。
+    </p>
+
+  </div>
+
+  <!-- 底部 -->
+  <footer class="footer-note">
+    <span>指南页面 · 仅供信息参考</span>
+  </footer>
+
+</body>
+</html>
