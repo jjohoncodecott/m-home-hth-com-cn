@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 站点介绍与使用说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(145deg, #f9e3b3 0%, #f5cba5 45%, #e8b88a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.2rem;
+            color: #2e241b;
+        }
+
+        .page-card {
+            max-width: 920px;
+            width: 100%;
+            background: #fffcf7;
+            border-radius: 40px 40px 32px 32px;
+            padding: 3rem 2.5rem 2.8rem;
+            box-shadow: 0 20px 45px rgba(140, 80, 30, 0.18), 0 6px 16px rgba(0,0,0,0.04);
+            transition: box-shadow 0.25s ease;
+            backdrop-filter: blur(0.5px);
+        }
+
+        .page-card:hover {
+            box-shadow: 0 28px 55px rgba(120, 65, 25, 0.20);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #4d2a14;
+            margin-bottom: 0.15em;
+            border-left: 6px solid #d9975e;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #7a593e;
+            margin-bottom: 2.2rem;
+            font-weight: 400;
+            border-bottom: 1px solid #ecdccb;
+            padding-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 550;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #4d2a14;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .section-title::before {
+            content: "◆";
+            font-size: 1rem;
+            color: #d9975e;
+            margin-right: 6px;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            font-size: 1.02rem;
+            color: #3f2d1f;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem 2rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .highlight-item {
+            background: #f8efe6;
+            border-radius: 24px;
+            padding: 1.2rem 1.3rem;
+            transition: background 0.15s, transform 0.1s;
+            box-shadow: inset 0 0 0 1px rgba(191, 145, 107, 0.15);
+        }
+
+        .highlight-item strong {
+            display: block;
+            font-size: 1.08rem;
+            color: #4d2a14;
+            margin-bottom: 0.35rem;
+            letter-spacing: 0.01em;
+        }
+
+        .highlight-item span {
+            font-size: 0.96rem;
+            color: #5b4230;
+        }
+
+        .scenario-box {
+            background: #f3e7db;
+            border-radius: 28px;
+            padding: 1.6rem 1.8rem;
+            margin: 1.8rem 0 1.2rem;
+            border: 1px solid #e4cfbb;
+        }
+
+        .scenario-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+            margin: 1.8rem 0 1.6rem;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            color: #4d2a14;
+            margin-bottom: 0.2rem;
+            font-size: 1.04rem;
+        }
+
+        .faq-a {
+            color: #3f2d1f;
+            padding-left: 0.2rem;
+            border-left: 3px solid #d9975e;
+            padding-left: 0.9rem;
+            font-size: 0.98rem;
+        }
+
+        .link-sentence {
+            font-size: 1.05rem;
+            background: #f5ede4;
+            padding: 1.2rem 1.8rem;
+            border-radius: 56px;
+            display: inline-block;
+            margin: 1.6rem 0 0.8rem;
+            box-shadow: 0 2px 8px rgba(140, 80, 30, 0.06);
+        }
+
+        a {
+            color: #b05d2a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 1px;
+        }
+
+        a:hover {
+            color: #7a3f1b;
+            border-bottom-color: #d9975e;
+            background: #f2e3d4;
+            border-radius: 12px;
+            padding: 0.1rem 0.3rem;
+            margin: -0.1rem -0.3rem;
+        }
+
+        .note-small {
+            font-size: 0.88rem;
+            color: #78614c;
+            background: #f2e8dd;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #e0ccb9;
+            margin: 2rem 0 1.2rem;
+            opacity: 0.5;
+        }
+
+        .footer-note {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 0.8rem 2rem;
+            font-size: 0.9rem;
+            color: #6f5540;
+            margin-top: 1.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #e8dacb;
+        }
+
+        @media (max-width: 650px) {
+            .page-card {
+                padding: 2rem 1.2rem 2rem;
+                border-radius: 28px;
+            }
+            h1 {
+                font-size: 1.9rem;
+                padding-left: 0.6rem;
+            }
+            .highlight-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .scenario-box {
+                padding: 1.2rem 1.2rem;
+            }
+            .link-sentence {
+                padding: 0.9rem 1.4rem;
+                font-size: 0.98rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .page-card {
+                padding: 1.5rem 0.8rem;
+                border-radius: 22px;
+            }
+            .section-title {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <h1>关于雷速</h1>
+        <div class="subhead">站点介绍 · 能力边界 · 稳妥使用</div>
+
+        <p>
+            <strong>雷速</strong> 是一个面向信息整合与轻量交互的网站，定位在帮助访问者更高效地梳理特定领域的内容脉络。从最初的功能框架到目前的稳定版本，站点围绕“结构清晰、反馈直接”的思路搭建，不堆砌复杂模块，也不依赖诱导式引导。如果你习惯在一个干净界面中完成对资料或概念的快速查阅，<a href="https://main-site-leisu.com">雷速</a> 所提供的工具型页面或许能契合这类需求。
+        </p>
+
+        <div class="section-title">亮点与倾向</div>
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <strong>内容优先</strong>
+                <span>页面聚焦于文本与结构化信息，避免过度动效或冗余装饰，阅读节奏由你控制。</span>
+            </div>
+            <div class="highlight-item">
+                <strong>低认知负荷</strong>
+                <span>导航和功能入口保持克制，每个界面的主要操作不超过三个，减少决策疲劳。</span>
+            </div>
+            <div class="highlight-item">
+                <strong>稳定响应</strong>
+                <span>基础架构经过多次调整，在常见浏览器及移动设备上均能保持一致的呈现与交互反馈。</span>
+            </div>
+        </div>
+
+        <div class="section-title">使用建议</div>
+        <div class="scenario-box">
+            <p>🔹 如果你需要快速查阅某个知识主题的要点归纳，建议直接使用站内分类卡片，信息按模块分组，可横向对比。<br>
+            🔹 利用页面中的折叠区块（如有）按需展开细节，避免一次性摄入过多内容。<br>
+            🔹 站点不收集不必要的个人数据，也无自动播放媒体，适合在专注环境下打开。<br>
+            🔹 若遇到链接跳转或功能异常，可先检查网络状态或尝试刷新页面 —— 大部分情况可自行恢复。</p>
+        </div>
+
+        <div class="section-title">常见疑问摘要</div>
+        <div class="faq-mini">
+            <div>
+                <div class="faq-q">Q：雷速需要注册或登录吗？</div>
+                <div class="faq-a">目前绝大多数内容页面可以直接浏览，无需注册账号。部分辅助功能（如保存进度）可能在未来以可选方式提供，但不会强制绑定身份。</div>
+            </div>
+            <div>
+                <div class="faq-q">Q：站内信息的更新频率如何？</div>
+                <div class="faq-a">核心模块跟随相关领域变化做季度或月度修订，非实时动态信息。页面会标注最后更新时间供参考。</div>
+            </div>
+            <div>
+                <div class="faq-q">Q：是否适合在移动端使用？</div>
+                <div class="faq-a">适配了主流屏幕尺寸，卡片和按钮在手机浏览器上同样可操作。但部分表格或宽列表建议横屏查看。</div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div style="text-align: left;">
+            <div class="link-sentence">
+                如需直接访问主站，你可将 <a href="https://main-site-leisu.com">雷速</a> 加入书签，以便日后快速调阅。
+            </div>
+            <div class="note-small">
+                ⚡ 本站不提供金融、医疗或法律建议，所有内容仅供参考与学习交流。
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <span>© 雷速 · 基础介绍页</span>
+            <span>内容方向：知识型 · 可信说明</span>
+            <span>版本标识：2411</span>
+        </div>
+    </div>
+</body>
+</html>
