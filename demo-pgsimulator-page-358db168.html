@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料整理：pg模拟器 功能与使用场景记录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: #fafbfc;
+            color: #1e2a3a;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            padding: 2.5rem 1.25rem;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            .page {
+                padding: 2rem 1.25rem;
+                border-radius: 16px;
+            }
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: #0b1a2e;
+            line-height: 1.3;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #4b5a6e;
+            margin-bottom: 2.5rem;
+            border-left: 4px solid #2d7a9b;
+            padding-left: 1rem;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e2a3a;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid #e5e9f0;
+            padding-bottom: 0.35rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: #2c3a4e;
+        }
+
+        a {
+            color: #1f6f8f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #1f6f8f;
+        }
+
+        ul {
+            margin: 1rem 0 1.5rem 1.25rem;
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.1rem;
+            margin-bottom: 0.7rem;
+            color: #2c3a4e;
+        }
+
+        ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #2d7a9b;
+            font-weight: 700;
+        }
+
+        .card-note {
+            background-color: #f4f7fb;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.75rem 0;
+            border-left: 4px solid #90b8c9;
+            font-size: 0.95rem;
+            color: #1f3347;
+        }
+
+        .card-note strong {
+            color: #0b1a2e;
+        }
+
+        .footnote {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e9f0;
+            font-size: 0.9rem;
+            color: #5b6e82;
+            text-align: left;
+        }
+
+        .inline-link {
+            font-weight: 500;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #edf0f5;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>关于 pg模拟器 的资料整理</h1>
+    <div class="subhead">一次围绕界面与逻辑的索引记录</div>
+
+    <p>在整理工具和模拟环境的过程中，我逐渐注意到一类专门针对 PostgreSQL 生态的轻量模拟器。它们并非完整的数据库安装包，而是聚焦于交互、调试或教学场景的简化实例。这篇文章便是我围绕“pg模拟器”这一关键词所做的信息梳理，内容来自日常使用与文档阅读，并不构成任何形式的官方说明。</p>
+
+    <p>如果你正在寻找一个可以快速体验 PostgreSQL 常见操作、测试查询逻辑或观察事务行为的在线环境，那么 <a href="https://demo-pgsimulator.com">pg模拟器</a> 是一个值得留意的入口。它的界面设计更偏向实用主义，没有过多装饰，重点放在语句输入、结果反馈与表结构展示上。以下是我从资料整理角度归纳的几个特点。</p>
+
+    <h2>界面与交互逻辑</h2>
+    <p>这类模拟器通常采用简洁的左右分栏或顶部工具栏布局，左侧用于编写 SQL 语句，右侧显示执行结果或错误信息。部分版本会提供预置的示例数据集，方便初次使用者快速上手。整体操作节奏由用户自己控制，适合用来验证某个函数或复习语法片段。</p>
+
+    <h2>适用场景举例</h2>
+    <ul>
+        <li>学习 SQL 基础时，用它练习 SELECT、JOIN、GROUP BY 等语句，避免在正式库中误操作。</li>
+        <li>测试某个索引或查询计划的大致表现，虽然模拟器无法完全复现生产环境，但能提供初步参考。</li>
+        <li>作为教学演示工具，在课堂上展示数据库的即时反馈，无需提前配置本地环境。</li>
+        <li>快速验证某个函数或数据类型的转换行为，例如日期格式、JSON 操作等。</li>
+    </ul>
+
+    <h2>关于数据与持久化</h2>
+    <p>需要明确的是，大多数在线 pg模拟器 的数据库实例是临时性的。会话结束后，写入的数据通常会被清空，不会长期保留。因此，它更适合用来做一次性探索或短期实验，而不宜作为正式数据的存储后端。如果你需要保存脚本或结果，建议将关键内容复制到本地文件中。</p>
+
+    <div class="card-note">
+        <strong>一点提示：</strong> 在开始使用前，可以留意页面中是否提供了重置数据库或导入样例表的按钮。有些模拟器默认附带了几张经典表（如 employees、orders），能节省自己建表的时间。
+    </div>
+
+    <h2>常见问题摘要</h2>
+    <ul>
+        <li><strong>是否支持所有 PostgreSQL 语法？</strong> — 通常支持大部分常用 DML 和 DDL 语句，但部分高级扩展或权限相关的命令可能受限。</li>
+        <li><strong>并发与性能如何？</strong> — 作为轻量模拟环境，不建议用于压力测试或长时间高负载查询。</li>
+        <li><strong>需要注册吗？</strong> — 多数在线模拟器无需注册即可使用，但保留历史记录的功能可能需要登录。</li>
+    </ul>
+
+    <p>总的来说，<a href="https://demo-pgsimulator.com">pg模拟器</a> 在“快速验证”这个环节上做得比较直接。它没有复杂的配置向导，也没有冗长的用户手册，打开页面后就能看到输入框和结果区。这种低门槛的设计，对于刚接触数据库的人或者只需要临时测试一段 SQL 的开发者来说，确实省去了很多前摇操作。</p>
+
+    <p>如果你只是想回忆某个函数的写法，或者对比不同查询方式的输出差异，不妨打开它试一下。把精力集中在语句本身，而不是环境的搭建上——这大概就是模拟器最原初的价值。</p>
+
+    <div class="footnote">
+        本文为个人资料整理记录，内容仅供参考。 ｜ 最后更新：2025年4月
+    </div>
+
+</div>
+</body>
+</html>
